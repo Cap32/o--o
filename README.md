@@ -2,6 +2,22 @@
 
 [WIP] A lightweight elegant WebSocket in Node.js
 
+## Features
+
+- Support `Pub / Sub` pattern
+- Support `Push / Pull` pattern
+- Support `Request / Reply` pattern
+- Promise based
+
+## Events
+
+- `error` (err) when an un-handled socket error occurs
+- `close` when server or connection is closed
+- `pub` (...args) when a message publishes
+- `sub` (...args) when a message subscription occurs
+- `req` (...args) when a message requests
+- `rep` (...args) when a message reply occurs
+
 ## Usages
 
 **Server.js**
@@ -36,9 +52,7 @@ import { Client } from 'o--o';
 }());
 ```
 
-### Patterns
-
-#### pub / sub
+### Pattern: pub / sub
 
 **Server.js**
 
@@ -55,7 +69,7 @@ const client = await Client.connect(`ws://127.0.0.1:9994`);
 await client.pub('greeting', 'hello');
 ```
 
-#### req / rep
+### Pattern: req / rep
 
 **Server.js**
 
