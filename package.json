@@ -1,0 +1,61 @@
+{
+  "name": "o--o",
+  "description": "A lightweight elegant WebSocket in Node.js",
+  "version": "0.0.0",
+  "main": "lib/index",
+  "files": [
+    "*.md",
+    "lib"
+  ],
+  "scripts": {
+    "start": "yarn test --watchAll",
+    "test": "cross-env NODE_ENV=development jest",
+    "format": "prettier-eslint --write \"+(src|test)/**/*.js\"",
+    "prebuild": "rimraf lib",
+    "build": "babel src -d lib",
+    "preversion": "yarn test && yarn build"
+  },
+  "author": "Cap32",
+  "repository": "Cap32/o--o",
+  "engines": {
+    "node": ">=6"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-jest": "^23.4.2",
+    "babel-plugin-transform-es2015-destructuring": "^6.19.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-plugin-transform-es2015-parameters": "^6.18.0",
+    "babel-plugin-transform-es2015-spread": "^6.22.0",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.11.6",
+    "cross-env": "^4.0.0",
+    "eslint": "^5.3.0",
+    "eslint-config-cantonjs": "^2.0.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jest": "^21.18.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-react": "^7.10.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "jest": "^23.4.2",
+    "prettier-eslint-cli": "^4.7.1",
+    "rimraf": "^2.5.4"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "modulePathIgnorePatterns": [
+      "node_modules",
+      "<rootDir>/lib/"
+    ]
+  }
+}
